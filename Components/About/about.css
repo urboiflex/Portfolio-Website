@@ -1,0 +1,939 @@
+/* About Page Styles */
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Interactive elements */
+a, button, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-1"]) {
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Background with particles */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: 
+      linear-gradient(135deg, 
+          #000000 0%, 
+          rgba(10, 10, 10, 0.95) 50%, 
+          #000000 100%),
+      radial-gradient(circle at 50% 50%, 
+          rgba(255, 255, 255, 0.05) 0%, 
+          rgba(255, 255, 255, 0.03) 20%, 
+          transparent 60%);
+  background-blend-mode: soft-light;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* About Section Styles */
+.about {
+  padding: 100px 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+.glitch-text {
+position: relative;
+font-family: 'Fira Mono', monospace;
+letter-spacing: -2px;
+animation: glitch 1s linear infinite;
+margin-bottom: 60px; /* Increased to accommodate the glitch effect */
+}
+
+.glitch-text:hover {
+animation: none;
+transform: none !important;
+}
+
+@keyframes glitch {
+2%,64% {
+  transform: translate(2px,0) skew(0deg);
+}
+4%,60% {
+  transform: translate(-2px,0) skew(0deg);
+}
+62% {
+  transform: translate(0,0) skew(5deg); 
+}
+}
+
+.glitch-text:before,
+.glitch-text:after {
+content: attr(title);
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+}
+
+.glitch-text:before {
+animation: glitchTop 1s linear infinite;
+clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+-webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+2%,64% {
+  transform: translate(2px,-2px);
+}
+4%,60% {
+  transform: translate(-2px,2px);
+}
+62% {
+  transform: translate(13px,-1px) skew(-13deg); 
+}
+}
+
+.glitch-text:after {
+animation: glitchBotom 1.5s linear infinite;
+clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+-webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+2%,64% {
+  transform: translate(-2px,0);
+}
+4%,60% {
+  transform: translate(-2px,0);
+}
+62% {
+  transform: translate(-22px,5px) skew(21deg); 
+}
+}
+
+/* Updated About h2 - Modified to work with glitch effect */
+.about h2 {
+font-size: 2.5rem;
+text-align: left;
+position: relative;
+color: #fff;
+}
+
+/* Fix for the underline animation - always visible and animates on hover */
+.about h2::after {
+content: '';
+position: absolute;
+width: 30px; /* Initial smaller width */
+height: 3px;
+background-color: #fff;
+bottom: -15px;
+left: 0;
+transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+z-index: 1;
+}
+
+.about h2:hover::after {
+width: 100px; /* Expanded width on hover */
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.profile-image {
+  margin-right: 30px;
+}
+
+.frame-effect {
+  --s: 20px;  /* size of the frame */
+  --b: 3px;   /* border thickness */
+  --w: 300px; /* width of the image */
+  --c: #7B3B3B;
+  
+  width: var(--w);
+  aspect-ratio: 1;
+  object-fit: cover;
+  padding: calc(2*var(--s));
+  --_g: var(--c) var(--b),#0000 0 calc(100% - var(--b)),var(--c) 0;
+  background:
+    linear-gradient(      var(--_g)) 50%/100% var(--_i,100%) no-repeat,
+    linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
+  outline: calc(var(--w)/2) solid #0009;
+  outline-offset: calc(var(--w)/-2 - 2*var(--s));
+  transition: .4s;
+  cursor: pointer;
+}
+
+.frame-effect:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: calc(var(--s)/-2);
+  --_i: calc(100% - 2*var(--s));
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+/* NEW: Skills Logo Container Styles */
+.skills-logo-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 10px;
+  justify-items: center;
+}
+
+.skill-logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.skill-logo:hover {
+  transform: scale(1.2);
+}
+
+.skill-logo:hover img {
+  filter: grayscale(0%);
+}
+
+/* Cards Section Styles */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 70px;
+  perspective: 1000px;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  perspective: 1000px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover .card-inner {
+  height: 120%;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px 20px 20px;
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+  backdrop-filter: blur(5px);
+}
+
+.card-front {
+  background: linear-gradient(135deg, rgba(40, 40, 45, 0.9) 0%, rgba(25, 25, 30, 0.95) 100%);
+  color: white;
+  top: 0;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.card-back {
+  background: linear-gradient(135deg, rgba(35, 35, 40, 0.95) 0%, rgba(20, 20, 25, 0.98) 100%);
+  color: white;
+  top: 100%;
+  transform: translateY(0);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.card:hover .card-front {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.1);
+  transform: translateY(-30%);
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.5s ease;
+}
+
+.card:hover .card-back {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+  transform: translateY(-80%);
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.5s ease;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .icon-image {
+  transform: scale(1.1);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.card h3::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: rgba(123, 59, 59, 0.7);
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 0 8px rgba(123, 59, 59, 0.4);
+}
+
+.card:hover h3::after {
+  width: 60px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.card-back ul {
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+}
+
+.education-date {
+  color: rgba(230, 167, 86, 0.9); /* Softer golden color for dates */
+  font-size: 0.9em;
+  font-style: italic;
+  display: block;
+  margin-top: 5px;
+  position: relative;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: linear-gradient(to right, rgba(123, 59, 59, 0.1), transparent);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.education-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  margin: 15px 0;
+  width: 85%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.card-back li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.card-back li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: rgba(123, 59, 59, 0.8);
+  text-shadow: 0 0 5px rgba(123, 59, 59, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Remove arrows from specific list items */
+.card-back li.no-arrow::before {
+  content: '';
+}
+
+/* Remove arrows from list items with education dates */
+.card-back li span.education-date {
+  position: relative;
+}
+
+.card-back li:has(span.education-date)::before,
+.card-back li span.education-date::before {
+  content: '';
+}
+
+/* Special styling for Business Information Systems specialization */
+.card-back li.no-arrow:nth-child(2) {
+  color: rgba(163, 228, 215, 0.9);
+  font-weight: 600;
+  position: relative;
+  padding: 8px 12px;
+  margin: 8px 0;
+  background: linear-gradient(to right, rgba(123, 59, 59, 0.15), transparent);
+  border-left: 3px solid rgba(123, 59, 59, 0.8);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(123, 59, 59, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 0 4px 4px 0;
+}
+
+.card-back li.no-arrow:nth-child(2)::after {
+  content: '🖥️';
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9em;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.card-back li.no-arrow:nth-child(2):hover {
+  transform: translateX(5px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-back li.no-arrow:nth-child(2):hover::after {
+  opacity: 1;
+  transform: translateY(-50%) rotate(10deg);
+}
+
+/* Card decoration elements */
+.card-decoration {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.7;
+  transition: all 0.5s ease;
+}
+
+.card:hover .card-decoration {
+  width: 40px;
+  height: 40px;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+/* Card shine effect */
+.card-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.03) 40%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.03) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card:hover .card-shine {
+  opacity: 1;
+}
+
+/* Enhance card icon */
+.card-icon {
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card-icon {
+  transform: translateY(-5px);
+}
+
+.icon-image {
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+/* Special styling for University Projects in Experience card */
+.card-back li.no-arrow:nth-child(6) {
+  color: rgba(163, 228, 215, 0.9);
+  font-weight: 600;
+  position: relative;
+  padding: 8px 12px;
+  margin: 8px 0;
+  background: linear-gradient(to right, rgba(123, 59, 59, 0.15), transparent);
+  border-left: 3px solid rgba(123, 59, 59, 0.8);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(123, 59, 59, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 0 4px 4px 0;
+}
+
+.card-back li.no-arrow:nth-child(6)::after {
+  content: '🎓';
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9em;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.card-back li.no-arrow:nth-child(6):hover {
+  transform: translateX(5px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-back li.no-arrow:nth-child(6):hover::after {
+  opacity: 1;
+  transform: translateY(-50%) rotate(10deg);
+}
+
+.card-back li:hover {
+  color: #fff;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+
+.card-back li:hover::before {
+  color: rgba(255, 255, 255, 0.8);
+  transform: translateX(2px);
+}
+
+/* Down Syndrome Day tooltip styles */
+.ds-day-item {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #a3e4d7;
+  font-weight: 600;
+  padding: 5px 10px;
+  margin: 5px 0;
+  background: linear-gradient(to right, rgba(123, 59, 59, 0.2), transparent);
+  border-left: 3px solid #7B3B3B;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ds-day-item:hover {
+  transform: translateX(5px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip styles removed */
+
+/* Spotify-inspired styles */
+.spotify-container {
+    background-color: #121212;
+    border-radius: 8px;
+    padding: 40px;
+    margin-top: -50px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.lyrics-content {
+    background: linear-gradient(180deg, #6b1d1d 0%, #4a0f0f 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.lyrics-line {
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+    cursor: default;
+    font-weight: bold;
+    color: #7B3B3B;
+    font-family: 'Circular', 'Gotham', 'Montserrat', 'Raleway', sans-serif;
+}
+
+.lyrics-line:hover {
+    color: #1DB954; /* Spotify green */
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid #2a2a2a;
+    width: 100%;
+}
+
+.album-info {
+    display: flex;
+    align-items: center;
+}
+
+.album-cover {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    margin-right: 12px;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-size: 20px;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.track-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.artist-name {
+    color: #b3b3b3;
+    font-size: 0.8rem;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.control-button {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-button:hover {
+    color: #fff;
+}
+
+.play-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.play-button:hover {
+    transform: scale(1.05);
+}
+
+.progress-container {
+    flex-grow: 1;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 220%;
+    margin-right: -10px;
+}
+
+.time {
+    color: #b3b3b3;
+    font-size: 0.7rem;
+    min-width: 35px;
+    text-align: center;
+    margin-bottom: -35px;
+}
+
+.progress-bar {
+    height: 4px;
+    background-color: #535353;
+    border-radius: 2px;
+    flex-grow: 1;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: -35px;
+}
+
+.progress {
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    width: 35%;
+    position: relative;
+}
+
+.progress:hover {
+    background-color: #1DB954;
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: -4px;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-bar:hover .progress::after {
+    opacity: 1;
+}
+
+.player-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 10px 0 20px;
+}
+
+.right-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 280px;
+    justify-content: flex-end;
+    margin-left: 12px;
+}
+
+.volume-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.volume-slider {
+    width: 120px;
+    height: 4px;
+    background-color: #535353;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.volume-progress {
+    width: 70%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: relative;
+}
+
+.volume-progress::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: -4px;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.volume-slider:hover .volume-progress::after {
+    opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .cards-container {
+      justify-content: center;
+  }
+  
+  .spotify-container {
+      padding: 30px;
+      margin-top: -30px;
+  }
+  
+  .right-controls {
+      min-width: 200px;
+      gap: 15px;
+  }
+  
+  .volume-slider {
+      width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about h2 {
+      font-size: 2rem;
+  }
+  
+  .card {
+      width: 280px;
+  }
+  
+  .skills-logo-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .spotify-container {
+      padding: 25px;
+      margin-top: 20px;
+  }
+  
+  .lyrics-content {
+      font-size: 1rem;
+      padding: 15px;
+  }
+  
+  .player-controls {
+      flex-wrap: wrap;
+  }
+  
+  .album-info {
+      margin-bottom: 15px;
+      width: 100%;
+  }
+  
+  .player-center {
+      order: 3;
+      width: 100%;
+      margin: 15px 0 0 0;
+  }
+  
+  .right-controls {
+      order: 2;
+      width: auto;
+      min-width: auto;
+      margin-left: auto;
+  }
+  
+  .progress-container {
+      width: 100%;
+      margin: 0;
+  }
+  
+  .volume-controls {
+      display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      width: 95%;
+  }
+  
+  .cards-container {
+      gap: 20px;
+  }
+  
+  .card {
+      width: 100%;
+      max-width: 320px;
+  }
+  
+  .skills-logo-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .spotify-container {
+      padding: 20px;
+  }
+  
+  .lyrics-content {
+      font-size: 0.9rem;
+      padding: 12px;
+      line-height: 1.6;
+  }
+  
+  .controls {
+      gap: 12px;
+  }
+  
+  .control-button {
+      font-size: 1rem;
+  }
+  
+  .play-button {
+      width: 36px;
+      height: 36px;
+  }
+  
+  .time {
+      font-size: 0.6rem;
+      min-width: 30px;
+  }
+  
+  .right-controls {
+      gap: 10px;
+  }
+}

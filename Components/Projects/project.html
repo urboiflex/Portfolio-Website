@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Jovan Richaldy Chandra</title>
+    <link rel="stylesheet" href="project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div id="particles-js"></div>
+    </div>
+
+    <main>
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="glitch-text" title="Projects">Projects</h2>
+                
+                <!-- Search and Filter Area -->
+                <div class="filter-container">
+                    <div class="search-box">
+                        <input type="text" id="project-search" placeholder="Filter projects..." class="filter-input">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn tech-btn">
+                            <span class="plus-icon">+</span> Tech
+                        </button>
+                        
+                        <button class="filter-btn year-btn">
+                            <span class="plus-icon">+</span> Year
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card" data-tech="React,NextJS,Typescript" data-year="2025">
+                        <div class="project-badge">Lorem Ipsum</div>
+                        <div class="project-badge-description">Coming Soon!</div>
+                        <a href="#" class="project-link">
+                            <div class="project-img-container">
+                                <img src="../Images/lorem.jpg" alt="AcheAlguem Project" class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Lorem Ipsum</h3>
+                                <p class="project-description">Coming Soon!</p>
+                                <div class="project-tags">
+                                    <span class="tag"></span>
+                                    <span class="tag"></span>
+                                    <span class="tag"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card" data-tech="React,NextJS,Typescript" data-year="2024">
+                        <div class="project-badge">Lorem Ipsum</div>
+                        <div class="project-badge-description">Coming Soon!</div>
+                        <a href="#" class="project-link">
+                            <div class="project-img-container">
+                                <img src="../Images/lorem.jpg" alt="NASA Dashboard Project" class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Lorem Ipsum</h3>
+                                <p class="project-description">Coming Soon!</p>
+                                <div class="project-tags">
+                                    <span class="tag"></span>
+                                    <span class="tag"></span>
+                                    <span class="tag"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card" data-tech="React,NextJS,Typescript" data-year="2025">
+                        <div class="project-badge">Lorem Ipsum</div>
+                        <div class="project-badge-description">Coming Soon!</div>
+                        <a href="#" class="project-link">
+                            <div class="project-img-container">
+                                <img src="../Images/lorem.jpg" alt="McDonalds Project" class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Lorem Ipsum</h3>
+                                <p class="project-description">Coming Soon!</p>
+                                <div class="project-tags">
+                                    <span class="tag"></span>
+                                    <span class="tag"></span>
+                                    <span class="tag"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Add more project cards as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="project.js"></script>
+    
+    <!-- Inline script to ensure cursor fixes work with AJAX loading -->
+    <script>
+        // Apply cursor fixes immediately and after dynamic loading
+        (function() {
+            // Apply fixes as soon as possible
+            if (typeof fixCursorIssues === 'function') {
+                fixCursorIssues();
+            }
+            
+            // Create a MutationObserver to watch for DOM changes
+            // This helps when content is loaded dynamically via AJAX
+            if (window.MutationObserver) {
+                var observer = new MutationObserver(function(mutations) {
+                    if (typeof fixCursorIssues === 'function') {
+                        fixCursorIssues();
+                    }
+                });
+                
+                // Start observing the document
+                observer.observe(document.body, { 
+                    childList: true, 
+                    subtree: true,
+                    attributes: true,
+                    attributeFilter: ['style', 'class']
+                });
+            }
+            
+            // Also try again after a delay
+            setTimeout(function() {
+                if (typeof fixCursorIssues === 'function') {
+                    fixCursorIssues();
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>

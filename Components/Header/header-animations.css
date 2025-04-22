@@ -1,0 +1,87 @@
+/* Header Navigation Hover Animations */
+
+/* Base styling for nav links - will be imported into main styles */
+.nav-links a {
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px 0;
+    display: inline-block;
+    overflow: hidden;
+}
+
+/* Hover effect - slight scale with smoother transition (glow removed) */
+.nav-links a:hover {
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Remove the existing underline animation */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+/* New underline animation - slide from right to left */
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Background highlight effect removed to eliminate glow */
+.nav-links a::before {
+    content: none; /* Completely remove the pseudo-element */
+}
+
+
+
+/* Add a subtle letter spacing effect with smoother transition */
+.nav-links a {
+    letter-spacing: 1px;
+    transition: letter-spacing 0.4s cubic-bezier(0.23, 1, 0.32, 1), color 0.4s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav-links a:hover {
+    letter-spacing: 1.5px;
+}
+
+/* Social icons hover effects with smoother transition */
+.social-icon {
+    position: relative;
+    transition: color 0.4s cubic-bezier(0.23, 1, 0.32, 1), filter 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon:hover {
+    color: #ffffff;
+}
+
+/* Removed pulse effect from social icons */
+
+/* Logo hover effect with smoother transition */
+.logo {
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* Make the entire header more interactive with smoother transition */
+header {
+    transition: background-color 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+header:hover {
+    background-color: rgba(10, 10, 10, 0.8);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}

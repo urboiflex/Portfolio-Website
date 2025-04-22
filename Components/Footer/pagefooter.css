@@ -1,0 +1,580 @@
+/* Page Footer Styles */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #212121;
+    color: #fff;
+    padding: 60px 0 30px;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Footer top section */
+.footer-top {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.footer-tagline {
+    font-size: 26px;
+    color: #ccc;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.footer-heading {
+    font-size: 76px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    background: linear-gradient(45deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer content section */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 40px;
+}
+
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+}
+
+.email-button {
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: 0;
+  border: 0;
+  padding: 1rem;
+}
+
+.email-button:before {
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  margin-right: 10px;
+  transition: all .42s cubic-bezier(.25,.8,.25,1);
+  width: 0;
+}
+
+.email-button:hover:before {
+  background-color: #fff;
+  width: 3rem;
+}
+
+.email-button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-cta {
+    flex: 1;
+    text-align: center;
+    min-width: 200px;
+    margin: 20px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.music-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 200px;
+    position: relative;
+}
+
+.music-card-title {
+    color: #1db954;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    width: 265px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    display: flex;
+    align-items: center;
+}
+
+.music-card-title:before {
+    background-color: #1db954;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-right: 10px;
+    transition: all .42s cubic-bezier(.25,.8,.25,1);
+    width: 0;
+}
+
+.music-card-title:hover:before {
+    background-color: #1db954;
+    width: 3rem;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #1db954, 0 0 10px #1db954;
+    }
+    to {
+        text-shadow: 0 0 10px #1db954, 0 0 20px #1db954;
+    }
+}
+
+/* Spotify music card styles */
+.card {
+    position: relative;
+    width: 265px;
+    height: 135px;
+    background: #191414;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.top {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.pfp {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    height: 40px;
+    width: 40px;
+    background-color: #d2d2d2;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-1 {
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.title-2 {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: -3px;
+}
+
+.time {
+    width: 90%;
+    background-color: #5e5e5e;
+    height: 6px;
+    border-radius: 3px;
+    position: absolute;
+    left: 5%;
+    bottom: 20px;
+}
+
+.elapsed {
+    width: 42%;
+    background-color: #1db954;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.controls {
+    color: white;
+    display: flex;
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.volume {
+    height: 100%;
+    width: 48px;
+}
+
+.air {
+    height: 100%;
+    width: 48px;
+}
+
+.controls svg {
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.controls svg:hover {
+    color: #1db954;
+}
+
+.volume {
+    opacity: 0;
+    position: relative;
+    transition: 0.2s;
+}
+
+.volume .slider {
+    height: 4px;
+    background-color: #5e5e5e;
+    width: 80%;
+    border-radius: 2px;
+    margin-top: 8px;
+    margin-left: 10%;
+}
+
+.volume .slider .green {
+    background-color: #1db954;
+    height: 100%;
+    width: 80%;
+    border-radius: 3px;
+}
+
+.volume .circle {
+    background-color: white;
+    height: 6px;
+    width: 6px;
+    border-radius: 3px;
+    position: absolute;
+    right: 20%;
+    top: 60%;
+}
+
+.volume_button:hover ~ .volume {
+    opacity: 1;
+}
+
+.timetext {
+    color: white;
+    font-size: 8px;
+    position: absolute;
+}
+
+.time_now {
+    bottom: 5px;
+    left: 10px;
+}
+
+.time_full {
+    bottom: 5px;
+    right: 10px;
+}
+
+.playing {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    gap: 1px;
+    width: 30px;
+    height: 20px;
+}
+
+.greenline {
+    background-color: #1db954;
+    height: 20px;
+    width: 2px;
+    position: relative;
+    transform-origin: bottom;
+}
+
+.line-1 {
+    animation: infinite playing 1s ease-in-out;
+    animation-delay: 0.2s;
+}
+
+.line-2 {
+    animation: infinite playing 1s ease-in-out;
+    animation-delay: 0.5s;
+}
+
+.line-3 {
+    animation: infinite playing 1s ease-in-out;
+    animation-delay: 0.6s;
+}
+
+.line-4 {
+    animation: infinite playing 1s ease-in-out;
+    animation-delay: 0s;
+}
+
+.line-5 {
+    animation: infinite playing 1s ease-in-out;
+    animation-delay: 0.4s;
+}
+
+@keyframes playing {
+    0% {
+        transform: scaleY(0.3);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0.3);
+    }
+}
+
+/* Footer social section */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.social-icon1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.social-icon1 i {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.social-icon1::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #6c757d;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+}
+
+.social-icon1:hover::before {
+    width: 150%;
+    height: 150%;
+}
+
+.social-icon1:hover i {
+    color: #fff;
+}
+
+/* Back to top button */
+.back-to-top {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.top-link {
+    display: inline-flex;
+    align-items: center;
+    color: #999;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.top-link span {
+    margin-right: 5px;
+}
+
+.top-link:hover {
+    color: #e74c3c;
+}
+
+/* Copyright section */
+.footer-copyright {
+    text-align: center;
+    padding-top: 20px;
+    position: relative;
+}
+
+.copyright-bar {
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+    margin: 0 auto 15px;
+    width: 80%;
+}
+
+.footer-copyright p {
+    font-size: 14px;
+    color: #999;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    padding: 5px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-contact, .footer-cta, .footer-location {
+        margin: 15px 0;
+        width: 100%;
+    }
+    
+    .footer-location {
+        justify-content: center;
+    }
+    
+    .footer-heading {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-social {
+        flex-wrap: wrap;
+    }
+    
+    .social-icon1 {
+        margin: 5px;
+    }
+    
+    .footer-heading {
+        font-size: 28px;
+    }
+}
+
+/* Custom button styles for CTA */
+.footer-cta button {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #18181a;
+    color: #18181a;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 18px;
+    padding: 30px 45px;
+    text-decoration: none;
+    cursor: pointer;
+    background: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border-radius: 50px; /* Added to create oval shape */
+    min-width: 200px; /* Ensures button has enough width for oval appearance */
+}
+
+.footer-cta button span:first-child {
+    position: relative;
+    transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 10;
+}
+
+.footer-cta button span:last-child {
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 100;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateY(225%) translateX(-50%);
+    height: 14px;
+    line-height: 13px;
+}
+
+.footer-cta button:after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform-origin: bottom center;
+    transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    transform: skewY(9.3deg) scaleY(0);
+    z-index: 50;
+}
+
+.footer-cta button:hover:after {
+    transform-origin: bottom center;
+    transform: skewY(9.3deg) scaleY(2);
+}
+
+.footer-cta button:hover span:last-child {
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+    transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital@0;1&display=swap');

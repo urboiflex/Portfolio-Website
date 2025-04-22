@@ -1,0 +1,502 @@
+/* Projects Page Styles */
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Using default cursor */
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Reset to default cursor */
+a, button, input, textarea, select,
+[role="button"], [tabindex]:not([tabindex="-1"]),
+.project-card, .project-link, .project-img,
+.filter-input, .filter-btn, .filter-checkbox,
+.filter-dropdown, .checkbox-label, .tag {
+  cursor: default;
+}
+
+/* Interactive elements use pointer cursor */
+a, button, 
+.project-card, .project-link,
+.filter-input, .filter-btn, .filter-checkbox,
+.checkbox-label, .tag, .filter-apply-btn {
+  cursor: pointer;
+}
+
+/* Fix pointer events */
+.project-card {
+  pointer-events: auto;
+}
+
+.project-img-container,
+.project-badge,
+.project-badge-description {
+  pointer-events: auto;
+}
+
+.project-info, 
+.project-title, 
+.project-description {
+  pointer-events: auto;
+}
+
+/* All elements are interactive by default */
+.project-link,
+.filter-input,
+.filter-btn,
+.tag,
+.filter-checkbox,
+.checkbox-label,
+.filter-apply-btn {
+  pointer-events: auto;
+}
+
+/* Background with particles */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: 
+      linear-gradient(135deg, 
+          #000000 0%, 
+          rgba(10, 10, 10, 0.95) 50%, 
+          #000000 100%),
+      radial-gradient(circle at 50% 50%, 
+          rgba(255, 255, 255, 0.05) 0%, 
+          rgba(255, 255, 255, 0.03) 20%, 
+          transparent 60%);
+  background-blend-mode: soft-light;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Projects Section Styles */
+.projects {
+  padding: 100px 0;
+}
+
+/* Glitch Text Effect (re-used from about.css) */
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+.glitch-text {
+  position: relative;
+  font-family: 'Fira Mono', monospace;
+  letter-spacing: -2px;
+  animation: glitch 1s linear infinite;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.glitch-text:hover {
+  animation: none;
+  transform: none !important;
+}
+
+@keyframes glitch {
+  2%,64% {
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60% {
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62% {
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+.glitch-text:before,
+.glitch-text:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,64% {
+    transform: translate(2px,-2px);
+  }
+  4%,60% {
+    transform: translate(-2px,2px);
+  }
+  62% {
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+.glitch-text:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+  2%,64% {
+    transform: translate(-2px,0);
+  }
+  4%,60% {
+    transform: translate(-2px,0);
+  }
+  62% {
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
+
+/* Projects h2 styling */
+.projects h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+  color: #fff;
+}
+
+/* Filter and Search Styles */
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  background: rgba(18, 18, 18, 0.8);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-box {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.filter-input {
+  width: 100%;
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.filter-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(123, 59, 59, 0.5);
+}
+
+.filter-input::placeholder {
+  color: #888;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.filter-btn {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.filter-btn:hover {
+  background-color: #2a2a2a;
+}
+
+.filter-btn.active {
+  background-color: #7B3B3B;
+}
+
+.plus-icon {
+  margin-right: 5px;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.filter-btn.active .plus-icon {
+  transform: rotate(45deg);
+}
+
+/* Filter Dropdown Styles */
+.filter-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  z-index: 10;
+  min-width: 200px;
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.filter-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tech-filter {
+  right: 60px;
+}
+
+.year-filter {
+  right: 0;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.filter-checkbox {
+  margin-right: 10px;
+  accent-color: #7B3B3B;
+  width: 16px;
+  height: 16px;
+}
+
+.filter-dropdown-title {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 600;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #333;
+}
+
+.filter-apply-btn {
+  background-color: #7B3B3B;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-top: 15px;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.filter-apply-btn:hover {
+  background-color: #944949;
+}
+
+/* Projects Grid Styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+/* Project Card Styles */
+.project-card {
+  background-color: #121212;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  will-change: transform, box-shadow;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #121212;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  z-index: 2;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-out;
+}
+
+.project-badge-description {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  background-color: rgba(18, 18, 18, 0.8);
+  color: #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  z-index: 2;
+  max-width: calc(100% - 20px);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+
+.project-card:hover .project-badge-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-img-container {
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-title {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.project-description {
+  color: #bbb;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #1e1e1e;
+  color: #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag:hover {
+  background-color: #7B3B3B;
+  color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .filter-container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+  
+  .search-box {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .filter-buttons {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects h2 {
+    font-size: 2rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 30px 15px;
+  }
+  
+  .filter-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Elegant Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Components/Header/header-animations.css">
+    <link rel="stylesheet" href="Components/About/about.css">
+    <link rel="stylesheet" href="Components/Projects/project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add styles for the typing animation */
+    .typing-text {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-family: 'Raleway', sans-serif;
+    color: #ccc;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Blur and fade out animation class */
+.blur-out {
+    filter: blur(10px);
+    opacity: 0;
+    transition: filter 1s ease, opacity 1s ease;
+}
+
+/* Keep the existing blinking cursor style */        
+.blinking-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: white;
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+        
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Iframe styling for the footer section */
+#footer-iframe {
+    width: 100%;
+    border: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div id="particles-js"></div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Components/Images/logo.png" alt="R Logo" class="nav-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/jovan-richaldy-2ba055294/" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/jovanrichaldy/" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://github.com/urboiflex" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Jovan Richaldy Chandra</h1>
+                <p><span id="typing-text" class="typing-text"></span><span class="blinking-cursor">|</span></p>
+                <div class="button-container">
+                    <a href="Components/Jovan Richaldy Chandra Resume (1).pdf" download><button id="bottone1"><strong>Check out my CV!</strong></button></a>
+                    <a href="mailto:jovan.rc1212@gmail.com"><button id="bottone2"><strong>Let's have a chat!</strong></button></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I'm a passionate web developer and designer with a focus on creating elegant, user-friendly interfaces. With expertise in modern web technologies, I build responsive and accessible websites that deliver exceptional user experiences.</p>
+                        <p>My approach combines clean code with creative design to produce websites that not only look great but also perform well across all devices.</p>
+                    </div>
+                    <div class="skills">
+                        <h3>Skills</h3>
+                        <div class="skill-bars">
+                            <div class="skill">
+                                <span>HTML/CSS</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <span>JavaScript</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <span>React</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <span>UI/UX Design</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <!-- Projects section will be loaded dynamically from Components/Projects/project.html -->
+        </section>
+
+        <!-- Contact section replaced with a fully isolated iframe to prevent CSS conflicts -->
+        <section id="contact">
+            <iframe id="footer-iframe" src="Components/Footer/pagefooter.html" scrolling="no"></iframe>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+    <script src="Components/Projects/project.js"></script>
+    
+    <script>
+        // Typing animation script
+        document.addEventListener('DOMContentLoaded', function() {
+            const texts = [
+                "Creative Thinker",
+                "Passionate Learner",
+                "Web Developer",
+                "Business Analyst"
+            ];
+            let currentIndex = 0;
+            let currentText = "";
+            
+            function updateTypingText(text) {
+                document.getElementById('typing-text').textContent = text;
+            }
+            
+            function typeText() {
+                const text = texts[currentIndex];
+                let i = 0;
+                const typeInterval = setInterval(() => {
+                    currentText = text.substring(0, i);
+                    updateTypingText(currentText);
+                    i++;
+                    if (i > text.length) {
+                        clearInterval(typeInterval);
+                        setTimeout(deleteText, 2000);
+                    }
+                }, 60);
+            }
+            
+            function deleteText() {
+                let i = currentText.length;
+                const deleteInterval = setInterval(() => {
+                    currentText = currentText.substring(0, i);
+                    updateTypingText(currentText);
+                    i--;
+                    if (i < 0) {
+                        clearInterval(deleteInterval);
+                        currentIndex = (currentIndex + 1) % texts.length;
+                        setTimeout(typeText, 500);
+                    }
+                }, 30);
+            }
+            
+            // Start the animation
+            typeText();
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function() {
+            // Load the entire about section HTML directly
+            $.ajax({
+                url: "Components/About/about.html",
+                dataType: "html",
+                success: function(data) {
+                    // Extract the inline styles from the loaded HTML
+                    let styles = $(data).filter('style');
+                    
+                    // Add those styles to the head if they don't already exist
+                    if (styles.length > 0) {
+                        // Check if similar styles already exist
+                        if ($('head style:contains("spotify-container")').length === 0) {
+                            $('head').append(styles);
+                        }
+                    }
+                    
+                    // Extract just the about section content
+                    let aboutContent = $(data).find('#about');
+                    
+                    // Replace the current about section with the loaded one
+                    $('#about').replaceWith(aboutContent);
+                    
+                    // Fix image paths
+                    $('#about img').each(function() {
+                        let src = $(this).attr('src');
+                        if (src && src.startsWith('../')) {
+                            // Convert relative paths to correct absolute paths
+                            $(this).attr('src', src.replace('../', 'Components/'));
+                        }
+                    });
+                    
+                    // Fix script paths
+                    $('#about script').each(function() {
+                        let src = $(this).attr('src');
+                        if (src && src.startsWith('../')) {
+                            $(this).attr('src', src.replace('../', 'Components/'));
+                        }
+                    });
+                    
+                    // Add the about.css reference again (in case it wasn't loaded properly)
+                    if ($('link[href="Components/About/about.css"]').length === 0) {
+                        $('head').append('<link rel="stylesheet" href="Components/About/about.css">');
+                    }
+                    
+
+                    
+                    console.log("About section loaded and paths updated successfully");
+                    
+                    // Start the Spotify lyrics animation after content is loaded
+                    setTimeout(function() {
+                        // Find all lyrics lines
+                        const lyricsLines = document.querySelectorAll('.lyrics-line');
+                        
+                        if (lyricsLines.length > 0) {
+                            console.log("Found lyrics lines:", lyricsLines.length);
+                            
+                            // Add transition style to each line for smooth color changes
+                            lyricsLines.forEach(line => {
+                                line.style.transition = 'color 0.5s ease';
+                            });
+                            
+                            let currentIndex = 0;
+                            
+                            // Function to highlight a single line
+                            function highlightLine() {
+                                // Clear previous highlights
+                                lyricsLines.forEach(line => {
+                                    line.style.color = '';
+                                });
+                                
+                                // Highlight current line (just change color, no transform)
+                                lyricsLines[currentIndex].style.color = '#1DB954'; // Spotify green
+                                
+                                // Move to next line
+                                currentIndex = (currentIndex + 1) % lyricsLines.length;
+                                
+                                // Continue animation
+                                setTimeout(highlightLine, 2000);
+                            }
+                            
+                            // Start animation
+                            highlightLine();
+                            console.log("Lyrics animation started!");
+                        } else {
+                            console.error("No lyrics lines found after About section loaded");
+                        }
+                    }, 1000); // Small delay to ensure DOM is updated
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error loading about section:", status, error);
+                }
+            });
+            
+            // Load the projects section HTML
+            $.ajax({
+                url: "Components/Projects/project.html",
+                dataType: "html",
+                success: function(data) {
+                    // Extract the inline styles from the loaded HTML
+                    let styles = $(data).filter('style');
+                    
+                    // Add those styles to the head if they don't already exist
+                    if (styles.length > 0) {
+                        // Check if similar styles already exist
+                        if ($('head style:contains("projects-grid")').length === 0) {
+                            $('head').append(styles);
+                        }
+                    }
+                    
+                    // Extract just the projects section content
+                    let projectsContent = $(data).find('#projects');
+                    
+                    // Replace the current projects section with the loaded one
+                    $('#projects').replaceWith(projectsContent);
+                    
+                    // Fix image paths
+                    $('#projects img').each(function() {
+                        let src = $(this).attr('src');
+                        if (src && src.startsWith('../')) {
+                            // Convert relative paths to correct absolute paths
+                            $(this).attr('src', src.replace('../', 'Components/'));
+                        }
+                    });
+                    
+                    // Fix script paths
+                    $('#projects script').each(function() {
+                        let src = $(this).attr('src');
+                        if (src && src.startsWith('../')) {
+                            $(this).attr('src', src.replace('../', 'Components/'));
+                        }
+                    });
+                    
+                    // Add the project.css reference again (in case it wasn't loaded properly)
+                    if ($('link[href="Components/Projects/project.css"]').length === 0) {
+                        $('head').append('<link rel="stylesheet" href="Components/Projects/project.css">');
+                    }
+                    
+
+                    
+                    console.log("Projects section loaded and paths updated successfully");
+                    
+                    // Initialize any project-specific functions if needed
+                    if (typeof initProjectsFilter === 'function') {
+                        initProjectsFilter();
+                    }
+                    
+                    if (typeof initFilterDropdowns === 'function') {
+                        initFilterDropdowns();
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error loading projects section:", status, error);
+                }
+            });
+        });
+    </script>
+    
+    <script>
+        // Handle iframe height adjustment for the footer
+        $('#footer-iframe').on('load', function() {
+            // Adjust iframe height to content
+            this.style.height = this.contentWindow.document.body.scrollHeight + 'px';
+            
+            // Add event listener for window resize
+            $(window).resize(function() {
+                $('#footer-iframe').css('height', $('#footer-iframe').contents().find('body').height() + 'px');
+            });
+            
+
+        });
+    </script>
+</body>
+</html>
